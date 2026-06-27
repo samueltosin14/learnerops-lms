@@ -1,0 +1,35 @@
+@model LearnerOpsLms.Models.Learner
+
+@{
+    ViewData["Title"] = "Deactivate Learner";
+}
+
+<div class="container mt-4">
+    <div class="card border-danger shadow-sm">
+        <div class="card-body">
+            <h1 class="h3 text-danger">Deactivate Learner</h1>
+
+            <p>
+                Confirm that you want to deactivate:
+                <strong>@Model.FullName</strong>
+            </p>
+
+            <p class="text-muted">
+                The learner will remain in the database but will be marked inactive.
+            </p>
+
+            <form asp-action="Deactivate"
+                  asp-route-id="@Model.Id"
+                  method="post">
+                <button type="submit" class="btn btn-danger">
+                    Confirm deactivation
+                </button>
+
+                <a asp-action="Index"
+                   class="btn btn-outline-secondary">
+                    Cancel
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

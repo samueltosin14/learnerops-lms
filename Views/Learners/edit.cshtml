@@ -1,0 +1,72 @@
+@model LearnerOpsLms.Models.Learner
+
+@{
+    ViewData["Title"] = "Edit Learner";
+}
+
+<div class="container mt-4">
+    <div class="mb-4">
+        <h1>Edit Learner</h1>
+        <p class="text-muted">Update the selected learner.</p>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form asp-action="Edit" method="post">
+                <input type="hidden" asp-for="Id" />
+
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="FullName" class="form-label"></label>
+                    <input asp-for="FullName" class="form-control" />
+                    <span asp-validation-for="FullName"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label"></label>
+                    <input asp-for="Email"
+                           class="form-control"
+                           type="email" />
+                    <span asp-validation-for="Email"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Department" class="form-label"></label>
+                    <select asp-for="Department" class="form-select">
+                        <option value="">Select a department</option>
+                        <option value="Cloud Operations">Cloud Operations</option>
+                        <option value="Cyber Security">Cyber Security</option>
+                        <option value="Learning Support">Learning Support</option>
+                        <option value="Software Development">Software Development</option>
+                        <option value="Quality Assurance">Quality Assurance</option>
+                    </select>
+                    <span asp-validation-for="Department"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input asp-for="IsActive" class="form-check-input" />
+                    <label asp-for="IsActive"
+                           class="form-check-label"></label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Save changes
+                </button>
+
+                <a asp-action="Index"
+                   class="btn btn-outline-secondary">
+                    Cancel
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

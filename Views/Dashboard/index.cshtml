@@ -1,0 +1,73 @@
+@model LearnerOpsLms.ViewModels.DashboardViewModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+    var environmentLabel = string.IsNullOrWhiteSpace(Model.EnvironmentName)
+        ? "Environment"
+        : Model.EnvironmentName.ToUpper();
+}
+
+<div class="container mt-4">
+    <div class="mb-4">
+        <h1 class="mb-1">LearnerOps Dashboard</h1>
+        <p class="text-muted mb-0">Live operational summary loaded from Azure SQL Database.</p>
+    </div>
+
+    <div class="row g-3 mb-4">
+        <div class="col-md-3">
+            <div class="card shadow-sm border-primary h-100">
+                <div class="card-body">
+                    <h6 class="text-muted">Courses</h6>
+                    <h2 class="mb-0">@Model.CourseCount</h2>
+                    <a class="small" asp-controller="Courses" asp-action="Index">View courses</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-success h-100">
+                <div class="card-body">
+                    <h6 class="text-muted">Learners</h6>
+                    <h2 class="mb-0">@Model.LearnerCount</h2>
+                    <a class="small" asp-controller="Learners" asp-action="Index">View learners</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-warning h-100">
+                <div class="card-body">
+                    <h6 class="text-muted">Assessments</h6>
+                    <h2 class="mb-0">@Model.AssessmentCount</h2>
+                    <a class="small" asp-controller="Assessments" asp-action="Index">View assessments</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-info h-100">
+                <div class="card-body">
+                    <h6 class="text-muted">Evidence Items</h6>
+                    <h2 class="mb-0">@Model.EvidenceItemCount</h2>
+                    <a class="small" asp-controller="Evidence" asp-action="Index">View evidence</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h5 class="card-title">@environmentLabel Environment Status</h5>
+            <p class="card-text mb-2">
+                The LearnerOps LMS @environmentLabel environment is connected to Azure SQL using Entity Framework Core.
+            </p>
+            <ul class="mb-0">
+                <li>Application: @Model.ApplicationName</li>
+                <li>SQL Server: @Model.SqlServerName</li>
+                <li>Database: @Model.SqlDatabaseName</li>
+                <li>Data access: @Model.DataAccess</li>
+                <li>Deployment method: @Model.DeploymentMethod</li>
+            </ul>
+        </div>
+    </div>
+</div>

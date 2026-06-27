@@ -1,0 +1,24 @@
+# Build output
+bin/
+obj/
+publish/
+publish-auth/
+publish-rbac/
+*.zip
+
+# User/local files
+*.user
+*.suo
+.vs/
+.vscode/
+
+# Sensitive/local config
+appsettings.Development.json
+runscript.ps1
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

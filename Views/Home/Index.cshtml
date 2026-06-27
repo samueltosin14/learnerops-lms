@@ -1,0 +1,130 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container mt-4">
+    <div class="mb-4">
+        <h1 class="fw-bold">LearnerOps LMS Dashboard</h1>
+        <p class="text-muted">
+            Manage learners, courses, assessments, and evidence submissions across apprenticeship programmes.
+        </p>
+    </div>
+
+    <div class="row g-3 mb-4">
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h6 class="text-muted">Active Learners</h6>
+                    <h2>248</h2>
+                    <span class="text-success">+12 this month</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h6 class="text-muted">Courses</h6>
+                    <h2>18</h2>
+                    <span class="text-muted">6 apprenticeship tracks</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h6 class="text-muted">Pending Assessments</h6>
+                    <h2>37</h2>
+                    <span class="text-warning">Requires assessor review</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h6 class="text-muted">Evidence Uploads</h6>
+                    <h2>1,426</h2>
+                    <span class="text-success">Blob storage connected later</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-white fw-bold">
+                    Recent Learner Activity
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-hover mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Learner</th>
+                                <th>Course</th>
+                                <th>Activity</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Aisha Khan</td>
+                                <td>Cyber Security Level 4</td>
+                                <td>Uploaded network security evidence</td>
+                                <td><span class="badge bg-warning">Pending Review</span></td>
+                            </tr>
+                            <tr>
+                                <td>Daniel Hughes</td>
+                                <td>Software Developer Level 4</td>
+                                <td>Completed API assessment</td>
+                                <td><span class="badge bg-success">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>Maria Johnson</td>
+                                <td>Data Technician Level 3</td>
+                                <td>Submitted portfolio update</td>
+                                <td><span class="badge bg-primary">In Progress</span></td>
+                            </tr>
+                            <tr>
+                                <td>Samuel Green</td>
+                                <td>Cloud Support Specialist</td>
+                                <td>Evidence awaiting assessor feedback</td>
+                                <td><span class="badge bg-danger">Overdue</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 mb-3">
+                <div class="card-header bg-white fw-bold">
+                    Platform Health
+                </div>
+                <div class="card-body">
+                    <p class="mb-2">App Service <span class="badge bg-success float-end">Running</span></p>
+                    <p class="mb-2">Key Vault <span class="badge bg-success float-end">Connected</span></p>
+                    <p class="mb-2">Storage <span class="badge bg-warning float-end">Demo Mode</span></p>
+                    <p class="mb-0">SQL Database <span class="badge bg-warning float-end">Demo Mode</span></p>
+                </div>
+            </div>
+
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-white fw-bold">
+                    Operational Notes
+                </div>
+                <div class="card-body">
+                    <ul class="mb-0">
+                        <li>Managed identity enabled.</li>
+                        <li>Application Insights configured.</li>
+                        <li>Log Analytics diagnostics active.</li>
+                        <li>Database integration coming next.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

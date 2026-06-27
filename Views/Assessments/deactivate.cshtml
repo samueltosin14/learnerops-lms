@@ -1,0 +1,38 @@
+@model LearnerOpsLms.Models.Assessment
+
+@{
+    ViewData["Title"] = "Deactivate Assessment";
+}
+
+<div class="container mt-4">
+    <div class="card border-danger shadow-sm">
+        <div class="card-body">
+            <h1 class="h3 text-danger">
+                Deactivate Assessment
+            </h1>
+
+            <p>
+                Confirm that you want to deactivate:
+                <strong>@Model.Title</strong>
+            </p>
+
+            <p class="text-muted">
+                The assessment will remain in the database but will be
+                marked inactive.
+            </p>
+
+            <form asp-action="Deactivate"
+                  asp-route-id="@Model.Id"
+                  method="post">
+                <button type="submit" class="btn btn-danger">
+                    Confirm deactivation
+                </button>
+
+                <a asp-action="Index"
+                   class="btn btn-outline-secondary">
+                    Cancel
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
